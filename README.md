@@ -3,3 +3,4 @@
 To do 
 
 Styliser le login form
+vérifier chemin favicon & logo
