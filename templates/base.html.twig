@@ -16,6 +16,7 @@
         <header>
             {% include "commons/_contact.html.twig" %}
             {% include "commons/_header.html.twig" %}
+            {{ render(controller('App\\Controller\\CategoryController::index')) }}
         </header>
         {% block body %}{% endblock %}
     </body>

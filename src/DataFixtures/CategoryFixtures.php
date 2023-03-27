@@ -24,19 +24,19 @@ class CategoryFixtures extends Fixture
             Nous vous proposons des cuisines sur mesure, adaptées à vos besoins et à votre budget.'
         ],
         [
-            'name' => 'https://cdn.pixabay.com/photo/2018/01/29/19/53/doors-3117027_960_720.jpg',
+            'name' => 'Fermeture, Portail',
             'image' => 'https://image.lexica.art/full_jpg/1b0b2b1f-2b1f-4b2f-9b1f-2b1f2b1f2b1f',
             'summary' => 'Les fermetures sont des éléments essentiels de la maison.
             Elles doivent être à la fois esthétiques et fonctionnelles.
             Nous vous proposons des portes, fenêtres, volets,
-            portails sur mesure, adaptées à vos besoins et à votre budget.'
+            portails sur mesure.'
         ],
         [
             'name' => 'Charpente, Escalier, Parquet',
             'image' => 'https://cdn.pixabay.com/photo/2018/10/06/17/27/staircase-3728350_960_720.jpg',
             'summary' => 'La charpente est un élément essentiel de la maison.
             Elle doit être à la fois esthétique et fonctionnelle.
-            Nous vous proposons des charpentes sur mesure, adaptées à vos besoins et à votre budget.'
+            Nous vous proposons des charpentes sur mesure.'
         ],
         [
             'name' => 'Aménagement Intérieur',
