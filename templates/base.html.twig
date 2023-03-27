@@ -19,5 +19,8 @@
             {{ render(controller('App\\Controller\\CategoryController::index')) }}
         </header>
         {% block body %}{% endblock %}
+        <footer>
+            {% include "commons/_footer.html.twig" %}
+        </footer>
     </body>
 </html>
