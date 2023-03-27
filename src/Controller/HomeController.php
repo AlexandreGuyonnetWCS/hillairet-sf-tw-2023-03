@@ -10,10 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function index(TeamRepository $teamRepository): Response
+    public function index(): Response
     {
-        return $this->render('pages/home.html.twig', [
-            'teams' => $teamRepository->findAll(),
-        ]);
+        return $this->render('pages/home.html.twig');
     }
 }

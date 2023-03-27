@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Team;
 use App\Entity\Project;
 use App\Entity\Category;
-use App\Entity\ProjectImage;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -37,6 +36,5 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Gestion de l\'équipe', 'fas fa-users', Team::class);
         yield MenuItem::section('');
         yield MenuItem::linkToCrud('Gestion des projets', 'fas fa-project-diagram', Project::class);
-        yield MenuItem::linkToCrud('Gestion des images', 'fas fa-images', ProjectImage::class);
     }
 }
