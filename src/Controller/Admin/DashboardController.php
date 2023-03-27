@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Team;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -28,5 +29,6 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToRoute('Retour sur le site', 'fas fa-home', 'home');
         yield MenuItem::section('');
+        yield MenuItem::linkToCrud('Gestion de l\'équipe', 'fas fa-users', Team::class);
     }
 }
