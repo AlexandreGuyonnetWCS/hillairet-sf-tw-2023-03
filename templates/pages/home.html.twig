@@ -11,4 +11,5 @@
 	</h1> #}
 	{{ render(controller('App\\Controller\\TeamController::team')) }}
 	{{ render(controller('App\\Controller\\ProjectController::project')) }}
+	{% include "components/_guarantees.html.twig" %}
 {% endblock %}
