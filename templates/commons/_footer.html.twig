@@ -27,22 +27,22 @@
 						05 46 74 09 00
 					</p>
 				</div>
-                <hr class="w-48 h-1 mx-auto my-4 bg-primary border-0 rounded md:my-10 dark:bg-gray-700">
+                <hr class="w-48 h-1 mx-auto my-4 bg-primary border-0 rounded md:w-1 md:h-48 dark:bg-gray-700">
 				<div class="">
 					<h6 class="mb-4 flex justify-center font-semibold uppercase md:justify-start text-primary">
 						Liens utiles
 					</h6>
 					<p class="mb-4">
-						<a href="#!" class="text-neutral-600 dark:text-neutral-200">Accueil</a>
+						<a href="{{ path('home') }}" class="text-neutral-600 dark:text-neutral-200 transition duration-300 border-b-2 border-transparent hover:border-primary">Accueil</a>
 					</p>
 					<p class="mb-4">
-						<a href="#!" class="text-neutral-600 dark:text-neutral-200">Plan du site</a>
+						<a href="#!" class="text-neutral-600 dark:text-neutral-200 transition duration-300 border-b-2 border-transparent hover:border-primary">Plan du site</a>
 					</p>
 					<p class="mb-4">
-						<a href="#!" class="text-neutral-600 dark:text-neutral-200">Mentions légales</a>
+						<a href="#!" class="text-neutral-600 dark:text-neutral-200 transition duration-300 border-b-2 border-transparent hover:border-primary">Mentions légales</a>
 					</p>
 					<p>
-						<a href="#!" class="text-neutral-600 dark:text-neutral-200">Conditions générales</a>
+						<a href="#!" class="text-neutral-600 dark:text-neutral-200 transition duration-300 border-b-2 border-transparent hover:border-primary">Conditions générales</a>
 					</p>
 				</div>
 				<div class="">
@@ -55,7 +55,7 @@
 					<p>
 						Vous avez un projet ? N'hésitez pas à nous contacter pour un devis gratuit.
 					</p>
-					<a href="{{ path('contact') }}" class="block w-full px-4 py-2 mt-4 font-medium text-center text-white uppercase transition-colors duration-200 transform bg-primary rounded-md hover:bg-primary-dark focus:outline-none focus:bg-primary-dark">Contactez-nous</a>
+					<a href="{{ path('contact') }}" class="block w-full px-4 py-2 mt-4 font-medium text-center text-white uppercase transition-colors duration-200 transform bg-primary rounded-md hover:bg-secondary focus:outline-none focus:bg-primary-dark">Contactez-nous</a>
 				</div>
 			</div>
 		</div>

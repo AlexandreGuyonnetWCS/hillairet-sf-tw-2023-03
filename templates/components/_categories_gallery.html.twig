@@ -1,0 +1,27 @@
+<div class="container mx-auto my-32">
+	<h3 class="text-3xl font-bold text-start text-primary mb-8">Nos prestations</h3>
+	<p class="text-lg text-start text-black mb-8">
+		Voici les différents services que nous proposons à nos clients.
+	</p>
+	<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+		{% for category in categories %}
+			<div class="overflow-hidden cursor-pointer relative group w-full h-64 rounded-md">
+				<div class="rounded-md z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+					<div class="flex flex-col items-center justify-center p-4">
+						<h3 class="text-2xl font-bold text-center text-white mb-4">{{ category.name }}</h3>
+						<p class="text-lg text-center text-white mb-4">{{ category.summary }}</p>
+                        <a href="#" class="text-lg text-center text-white mb-4">En savoir plus</a>
+					</div>
+					<div class="absolute top-0 right-0 flex items-center justify-center">
+						<svg class=" text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+						</svg>
+					</div>
+				</div>
+				<div class="absolute inset-0 z-0">
+					<img class="object-cover rounded-md" src="{{ category.image }}" alt="{{ category.name }}">
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

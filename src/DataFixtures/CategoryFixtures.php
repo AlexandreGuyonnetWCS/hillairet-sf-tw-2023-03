@@ -25,7 +25,7 @@ class CategoryFixtures extends Fixture
         ],
         [
             'name' => 'Fermeture, Portail',
-            'image' => 'https://image.lexica.art/full_jpg/1b0b2b1f-2b1f-4b2f-9b1f-2b1f2b1f2b1f',
+            'image' => 'https://cdn.pixabay.com/photo/2016/10/01/14/58/goal-1707702_960_720.jpg',
             'summary' => 'Les fermetures sont des éléments essentiels de la maison.
             Elles doivent être à la fois esthétiques et fonctionnelles.
             Nous vous proposons des portes, fenêtres, volets,
@@ -65,6 +65,13 @@ class CategoryFixtures extends Fixture
             'summary' => 'La menuiserie est un élément essentiel de la maison.
             Elle doit être à la fois esthétique et fonctionnelle.
             Nous vous proposons des menuiseries sur mesure, adaptées à vos besoins et à votre budget.'
+        ],
+        [
+            'name' => 'Meuble de salle de bains',
+            'image' => 'https://cdn.pixabay.com/photo/2016/11/23/00/56/bathroom-1851566_960_720.jpg',
+            'summary' => 'Le meuble de salle de bains est un élément essentiel de la maison.
+            Il doit être à la fois esthétique et fonctionnel.
+            Nous vous proposons des meubles de salle de bains sur mesure, adaptés à vos besoins et à votre budget.'
         ],
     ];
     public function load(ObjectManager $manager): void

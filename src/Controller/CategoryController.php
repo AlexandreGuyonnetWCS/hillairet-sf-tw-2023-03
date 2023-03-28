@@ -14,4 +14,11 @@ class CategoryController extends AbstractController
             'categories' => $categories->findAll(),
         ]);
     }
+
+    public function gallery(CategoryRepository $categories): Response
+    {
+        return $this->render('components/_categories_gallery.html.twig', [
+            'categories' => $categories->findAll(),
+        ]);
+    }
 }

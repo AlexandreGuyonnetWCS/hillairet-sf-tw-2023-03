@@ -10,6 +10,12 @@ Encore
 
     .setPublicPath('/build')
 
+    .copyFiles({
+        from: './assets/images',
+
+        to: 'images/[path][name].[ext]',
+    })
+
     .addEntry('app', './assets/app.js')
 
     .enableStimulusBridge('./assets/controllers.json')

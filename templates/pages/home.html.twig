@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% block body %}
-	{# <h1 class="text-3xl font-bold underline text-secondary-light">
-		Hello world!
-	</h1> #}
+	<h1 class="text-5xl font-bold text-end text-gray-800 my-4 mx-8">
+		Menuiserie Hillairet
+	</h1>
+	{{ render(controller('App\\Controller\\CategoryController::gallery')) }}
+	{% include "components/_about.html.twig" %}
 	{{ render(controller('App\\Controller\\TeamController::team')) }}
 	{{ render(controller('App\\Controller\\ProjectController::project')) }}
 	{% include "components/_guarantees.html.twig" %}
