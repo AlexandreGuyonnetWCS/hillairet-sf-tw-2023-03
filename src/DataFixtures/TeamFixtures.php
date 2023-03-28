@@ -57,6 +57,18 @@ class TeamFixtures extends Fixture
             'summary' => 'Shen-zu est notre cheffe, 
             elle est à l\'écoute de tout vos projets',
         ],
+        [
+            'firstName' => 'Alberto',
+            'picture' => 'https://image.lexica.art/full_jpg/5a877731-ff64-4a5b-886f-06a5436c6358',
+            'summary' => 'Alberto est notre chef de projet. 
+            Il est très rigoureux et très organisé',
+        ],
+        [
+            'firstName' => 'Candice',
+            'picture' => 'https://image.lexica.art/full_jpg/65114d12-84ed-4917-ac4f-661f5736dfc2',
+            'summary' => 'Candice est notre communicante.
+            Elle est très rigoureuse et très organisée',
+        ],
     ];
     public function load(ObjectManager $manager): void
     {
