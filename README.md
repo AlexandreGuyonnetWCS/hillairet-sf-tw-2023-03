@@ -10,3 +10,4 @@ rendre la gallery "team" responsive
 styliser la gallerie "category"
 styliser la partie "about"
 créer la partie category show
+changer l'hébergement dans les mentions légales (si besoin)

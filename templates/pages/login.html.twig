@@ -6,19 +6,44 @@
 {% endblock %}
 
 {% block body %}
-	{% if error %}
-		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-	{% endif %}
-	<form action="{{ path('login') }}" method="post">
-		<label for="username">Username:</label>
-		<input type="text" id="username" name="_username" value="{{ last_username }}">
-
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="_password">
-
-		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-		<input type="hidden" name="_target_path" value="{{ path('admin') }}">
-
-		<button type="submit">Connexion</button>
-	</form>
+	<div class="container mx-auto">
+		<div class="flex justify-center px-6 my-12">
+			<div class="w-full xl:w-3/4 lg:w-11/12 flex">
+				<div class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg" style="background-image: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+				<div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+					<h3 class="pt-4 text-2xl text-center">Connexion</h3>
+					{% if error %}
+						<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+					<form class="px-8 pt-6 pb-8 mb-4 bg-white rounded" action="{{ path('login') }}" method="post">
+						<div class="mb-4">
+							<label class="block mb-2 text-sm font-bold text-gray-700" for="username">
+								Identifiant
+							</label>
+							<input class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="username" name="_username" type="text" placeholder="Username" value="{{ last_username }}"/>
+						</div>
+						<div class="mb-4">
+							<label class="block mb-2 text-sm font-bold text-gray-700" for="password">
+								Mot de passe
+							</label>
+							<input class="w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline" id="password" name="_password" type="password" placeholder="******************"/>
+						</div>
+						<div class="mb-6 text-center">
+							<button class="w-full px-4 py-2 font-bold text-white bg-gray-900 rounded-full hover:bg-gray-700 focus:outline-none focus:shadow-outline" type="submit">
+								Connexion
+							</button>
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+							<input type="hidden" name="_target_path" value="{{ path('admin') }}">
+						</div>
+						<hr class="mb-6 border-t"/>
+						<div class="text-center">
+							<a class="inline-block text-sm text-blue-500 align-baseline hover:text-blue-800" href="https://medium.com/@kamranahmedse">
+								Mot de passe oublié ?
+							</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
