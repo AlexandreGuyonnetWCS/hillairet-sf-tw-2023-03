@@ -1,4 +1,6 @@
-/* eslint-disable no-undef */
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+
 let defaultTransform = 0;
 export function goNext() {
     defaultTransform = defaultTransform - 398;

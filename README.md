@@ -11,3 +11,6 @@ styliser la gallerie "category"
 styliser la partie "about"
 créer la partie category show
 changer l'hébergement dans les mentions légales (si besoin)
+erreur console
+mot de passe oublié
+twig bundle error
