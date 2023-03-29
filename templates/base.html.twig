@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="description" content="Hillairet, entreprise de menuiserie, vous propose ses services pour la réalisation de vos projets de menuiserie intérieure et extérieure.">
-        <meta name="keywords" content="menuiserie, menuiserie PVC, isolation, cloison seche, portail, porte, placard, dressing, charpente, parquet, maison ossature bois, terrasse bois, cuisine, salle de bains, volet, fermeture, store, fenetre, escalier, agencement Interieur.">
-        <meta name="author" content="Hillairet">
-        <meta name="robots" content="index, follow">
-        <meta name="googlebot" content="index, follow">
-        <meta name="google" content="nositelinkssearchbox">
-        <meta name="google" content="notranslate">
-        <meta property="og:title" content="Hillairet">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://www.menuiserie-hillairet-17.com/">
-        <meta property="og:image" content="https://www.menuiserie-hillairet-17.com/build/images/logo.png">
-        <meta property="og:description" content="Hillairet, entreprise de menuiserie, vous propose ses services pour la réalisation de vos projets de menuiserie intérieure et extérieure.">
-        <meta property="og:site_name" content="Hillairet">
+        {% include "components/_metadatas.html.twig" %}
         <title>{% block title %}Menuiserie Hillairet{% endblock %}</title>
-            <link rel="icon" type="image/png" href="{{ asset('build/images/logo.png') }}" />
+            <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}

@@ -1,10 +1,15 @@
 <nav class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
 	<div class="container flex flex-wrap items-center justify-between mx-auto">
 		<a href="{{ path('home') }}" class="flex items-center">
-			<img src="{{ asset('build/images/logo.png') }}" class="h-6 mr-3 sm:h-9" alt="Menuiserie Hillairet">
+			<img src="{{ asset('build/images/logo.png') }}" class="h-8 mr-3 sm:h-16" alt="Menuiserie Hillairet">
 		</a>
 		<div class="flex md:order-2">
-			<a href="{{ path('contact') }}" class="block w-full px-4 py-2 mt-4 font-medium text-center text-white uppercase transition-colors duration-200 transform bg-primary rounded-md hover:bg-secondary focus:outline-none focus:bg-primary-dark">Contact</a>
+			<a href="{{ path('contact') }}" class="flex w-full px-4 py-2 font-bold text-center text-white uppercase transition-colors duration-200 transform bg-primary rounded-md hover:bg-secondary focus:outline-none focus:bg-primary-dark">
+			<svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+			</svg>
+				Demander un devis
+			</a>
 			<button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
 				<span class="sr-only">Ouvrir le menu</span>
 				<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

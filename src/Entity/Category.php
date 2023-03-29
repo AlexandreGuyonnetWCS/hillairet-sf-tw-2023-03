@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategoryRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -15,8 +16,11 @@ class Category
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: 'string', length: 100, unique: true)]
+    private string $name;
+
+    #[ORM\Column(type: 'string', length: 100, unique: true)]
+    private string $slug;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $image = null;
@@ -41,9 +45,9 @@ class Category
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }
@@ -55,6 +59,25 @@ class Category
     public function setName(string $name): Category
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return Category
+     */
+    public function setSlug(string $slug): Category
+    {
+        $this->slug = $slug;
 
         return $this;
     }
