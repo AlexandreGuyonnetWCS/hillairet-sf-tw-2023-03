@@ -3,11 +3,11 @@
 namespace App\Entity;
 
 use DateTimeImmutable;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 #[ORM\Table(name: 'project')]
@@ -30,7 +30,12 @@ class Project
     #[ORM\Column(nullable: true)]
     private ?DateTimeImmutable $createdAt = null;
 
-    #[ORM\OneToMany(mappedBy: 'project', targetEntity: ProjectImage::class, orphanRemoval: true, cascade: ['persist'])]
+    #[ORM\OneToMany(
+        mappedBy: 'project',
+        targetEntity: ProjectImage::class,
+        orphanRemoval: true,
+        cascade: ['persist']
+    )]
     private Collection $image;
 
     public function __construct()

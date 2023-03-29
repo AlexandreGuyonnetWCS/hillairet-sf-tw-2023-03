@@ -5,6 +5,7 @@
 	</p>
 	<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
 		{% for category in categories %}
+			{% set image = category.image|first %}
 			<div class="overflow-hidden cursor-pointer relative group w-full h-64 rounded-sm">
 				<div class="rounded-md z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
 					<div class="flex flex-col items-center justify-center p-4">
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 				<div class="absolute inset-0 z-0">
-					<img class="object-cover rounded-md" src="{{ category.image }}" alt="{{ category.name }}">
+					<img class="object-cover rounded-md" src="{{ image.picture }}" alt="{{ category.name }}">
 				</div>
 			</div>
 		{% endfor %}

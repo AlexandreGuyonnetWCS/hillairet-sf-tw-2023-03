@@ -4,7 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategoryRepository;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -23,17 +24,22 @@ class Category
     private string $slug;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $image = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
     private ?string $summary = null;
 
-    #[ORM\PostRemove]
-    public function postRemove(): void
+    #[ORM\Column(type: 'text', nullable: true)]
+    private ?string $description = null;
+
+    #[ORM\OneToMany(
+        mappedBy: 'category',
+        targetEntity: CategoryImage::class,
+        orphanRemoval: true,
+        cascade: ['persist']
+    )]
+    private Collection $image;
+
+    public function __construct()
     {
-        if ($this->image) {
-            unlink('uploads/category/' . $this->image);
-        }
+        $this->image = new ArrayCollection();
     }
 
     /**
@@ -85,25 +91,6 @@ class Category
     /**
      * @return string|null
      */
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    /**
-     * @param string|null $image
-     * @return Category
-     */
-    public function setImage(?string $image): Category
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
     public function getSummary(): ?string
     {
         return $this->summary;
@@ -116,6 +103,63 @@ class Category
     public function setSummary(?string $summary): Category
     {
         $this->summary = $summary;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string|null $description
+     * @return Category
+     */
+    public function setDescription(?string $description): Category
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, CategoryImage>
+     */
+    public function getImage(): Collection
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param CategoryImage $image
+     * @return Category
+     */
+    public function addImage(CategoryImage $image): Category
+    {
+        if (!$this->image->contains($image)) {
+            $this->image->add($image);
+            $image->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param CategoryImage $image
+     * @return Category
+     */
+    public function removeImage(CategoryImage $image): Category
+    {
+        if ($this->image->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getCategory() === $this) {
+                $image->setCategory(null);
+            }
+        }
 
         return $this;
     }

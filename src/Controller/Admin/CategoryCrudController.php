@@ -5,8 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class CategoryCrudController extends AbstractCrudController
@@ -19,8 +19,8 @@ class CategoryCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInSingular('Catégorie')
-            ->setEntityLabelInPlural('Catégories')
+            ->setEntityLabelInSingular('Prestation')
+            ->setEntityLabelInPlural('Prestations')
             ->setSearchFields(['id', 'name', 'image', 'summary'])
             ->setPaginatorPageSize(10);
     }
@@ -30,14 +30,13 @@ class CategoryCrudController extends AbstractCrudController
         return [
             TextField::new('name', 'Nom')
                 ->setRequired(true),
-            ImageField::new('image', 'Image')
-                ->setBasePath('uploads/category/')
-                ->setUploadDir('public/uploads/category')
-                ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
-            TextareaField::new('summary', 'Description')
+            TextareaField::new('summary', 'Résumé')
                 ->setRequired(false)
-                ->setHelp('La description doit faire moins de 255 caractères'),
+                ->setHelp('La résumé doit faire moins de 255 caractères'),
+            TextareaField::new('description', 'Description')
+                ->setRequired(false),
+            CollectionField::new('image', 'Images')
+                ->useEntryCrudForm(),
         ];
     }
 }
