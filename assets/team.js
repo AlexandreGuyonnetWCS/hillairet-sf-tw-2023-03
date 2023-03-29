@@ -2,7 +2,7 @@ let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 
 let defaultTransform = 0;
-export function goNext() {
+function goNext() {
     defaultTransform = defaultTransform - 398;
     var slider = document.getElementById("slider");
     if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
