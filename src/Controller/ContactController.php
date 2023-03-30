@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ContactType;
-use Symfony\Component\Mime\Email;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,18 +21,19 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
-            $email = (new Email())
+            $email = (new TemplatedEmail())
                 ->from($contact['email'])
                 ->to($this->getParameter('mailer_adress'))
                 ->subject($contact['subject'])
-                ->text('
-                    Nom: ' . $contact['firstname'] . '
-                    Prénom: ' . $contact['lastname'] . '
-                    Téléphone: ' . $contact['phone'] . '
-                    Email: ' . $contact['email'] . '
-                    Sujet: ' . $contact['subject'] . '
-                    Message: ' . $contact['message'] . '
-                ');
+                ->htmlTemplate('emails/contact.html.twig')
+                ->context([
+                    'Prénom' => $contact['firstname'],
+                    'Nom' => $contact['lastname'],
+                    'Email' => $contact['email'],
+                    'Téléphone' => $contact['phone'],
+                    'Sujet' => $contact['subject'],
+                    'Message' => $contact['message'],
+                ]);
             $mailer->send($email);
 
             $this->addFlash('success', 'Votre message a bien été envoyé.');
