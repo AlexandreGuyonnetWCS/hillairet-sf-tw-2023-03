@@ -32,7 +32,7 @@ class CategoryCrudController extends AbstractCrudController
                 ->setRequired(true),
             TextareaField::new('summary', 'Résumé')
                 ->setRequired(false)
-                ->setHelp('La résumé doit faire moins de 255 caractères'),
+                ->setHelp('La résumé doit faire moins de 180 caractères'),
             TextareaField::new('description', 'Description')
                 ->setRequired(false),
             CollectionField::new('image', 'Images')

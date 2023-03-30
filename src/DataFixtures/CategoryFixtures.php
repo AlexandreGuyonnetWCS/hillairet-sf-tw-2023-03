@@ -15,7 +15,7 @@ class CategoryFixtures extends Fixture
             'slug' => 'terrasse-bois',
             'summary' => 'Les terrasses en bois sont très prisées pour leur
             aspect naturel et leur facilité d\'entretien. 
-            Elles sont aussi très résistantes et peuvent être installées sur tous les types de sols.',
+            Elles peuvent être installées sur tous les types de sols.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -41,7 +41,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Cuisine Aménagée',
             'slug' => 'cuisine-aménagée',
             'summary' => 'La cuisine est la pièce maîtresse de la maison.
-            Elle doit être à la fois fonctionnelle et esthétique.
             Nous vous proposons des cuisines sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
@@ -67,8 +66,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Fermeture, Portail',
             'slug' => 'fermeture-portail',
-            'summary' => 'Les fermetures sont des éléments essentiels de la maison.
-            Elles doivent être à la fois esthétiques et fonctionnelles.
+            'summary' => 'Les fermetures sont des éléments de la maison.
             Nous vous proposons des portes, fenêtres, volets,
             portails sur mesure.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -123,7 +121,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Aménagement Intérieur',
             'slug' => 'aménagement-intérieur',
             'summary' => 'L\'aménagement intérieur est un élément essentiel de la maison.
-            Il doit être à la fois esthétique et fonctionnel.
             Nous vous proposons des aménagements intérieurs sur mesure, adaptés à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
@@ -150,7 +147,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Maison ossature bois',
             'slug' => 'maison-ossature-bois',
             'summary' => 'La maison ossature bois est un élément essentiel de la maison.
-            Elle doit être à la fois esthétique et fonctionnelle.
             Nous vous proposons des maisons ossature bois sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
@@ -177,7 +173,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Isolation',
             'slug' => 'isolation',
             'summary' => 'L\'isolation est un élément essentiel de la maison.
-            Elle doit être à la fois esthétique et fonctionnelle.
             Nous vous proposons des isolations sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
@@ -204,7 +199,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Menuiserie bois, PVC, Aluminium',
             'slug' => 'menuiserie-bois-pvc-aluminium',
             'summary' => 'La menuiserie est un élément essentiel de la maison.
-            Elle doit être à la fois esthétique et fonctionnelle.
             Nous vous proposons des menuiseries sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
@@ -231,7 +225,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Meuble de salle de bains',
             'slug' => 'meuble-de-salle-de-bains',
             'summary' => 'Le meuble de salle de bains est un élément essentiel de la maison.
-            Il doit être à la fois esthétique et fonctionnel.
             Nous vous proposons des meubles de salle de bains sur mesure, adaptés à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.

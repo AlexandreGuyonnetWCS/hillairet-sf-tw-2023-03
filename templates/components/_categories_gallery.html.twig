@@ -3,15 +3,14 @@
 	<p class="text-lg text-start text-black mb-8">
 		Voici les différents services que nous proposons à nos clients.
 	</p>
-	<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 		{% for category in categories %}
-			{% set image = category.image|first %}
 			<div class="overflow-hidden cursor-pointer relative group w-full h-64 rounded-sm">
 				<div class="rounded-md z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
 					<div class="flex flex-col items-center justify-center p-4">
 						<h3 class="text-2xl font-bold text-center text-white mb-4">{{ category.name }}</h3>
 						<p class="text-lg text-center text-white mb-4">{{ category.summary }}</p>
-                        <a href="{{ path('category', { slug: category.slug }) }}" class="bg-white px-4 py-2 font-bold text-center text-primary hover:bg-primary hover:text-white rounded-md">Voir plus</a>
+						<a href="{{ path('category', { slug: category.slug }) }}" class="bg-white px-4 py-2 font-bold text-center text-primary hover:bg-primary hover:text-white rounded-md">Voir plus</a>
 					</div>
 					<div class="absolute top-0 right-0 flex items-center justify-center">
 						<svg class=" text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +19,10 @@
 					</div>
 				</div>
 				<div class="absolute inset-0 z-0">
-					<img class="object-cover rounded-md" src="{{ image.picture }}" alt="{{ category.name }}">
+					{% set image = category.image.first %}
+					{# <img src="{{ image ? asset('uploads/category/' ~ image.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ category.name }}" class="w-full h-full object-cover"> #}
+					<img src="{{ image.picture }}" alt="{{ category.name }}" class="w-full h-full object-cover">
+					<div class="absolute inset-0 bg-black opacity-20"></div>
 				</div>
 			</div>
 		{% endfor %}
