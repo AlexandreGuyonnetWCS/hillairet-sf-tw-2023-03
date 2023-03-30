@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Karser\Recaptcha3Bundle\Validator\Constraints\Recaptcha3;
 
 /**
@@ -156,6 +157,13 @@ class ContactType extends AbstractType
                     ],
                 ]
             )
+            ->add('rgpd', CheckboxType::class, [
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Merci d\'accepter les conditions d\'utilisation de vos données personnelles',
+                    ]),
+                ],
+            ])
             ->add('captcha', Recaptcha3Type::class, [
                 'constraints' => new Recaptcha3(),
                 'action_name' => 'contact',
