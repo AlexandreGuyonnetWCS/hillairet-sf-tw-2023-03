@@ -2,8 +2,6 @@
 
 To do 
 
-meta description sur chaque page
-
 styliser la gallerie "category"
 
 changer l'hébergement dans les mentions légales (si besoin)
