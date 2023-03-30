@@ -23,7 +23,7 @@ class ContactController extends AbstractController
             $contact = $form->getData();
             $email = (new Email())
                 ->from($contact['email'])
-                ->to('mshillairet@nordnet.fr')
+                ->to($this->getParameter('mailer_adress'))
                 ->subject($contact['subject'])
                 ->text('
                     Nom: ' . $contact['firstname'] . '
