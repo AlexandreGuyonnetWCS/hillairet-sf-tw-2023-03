@@ -122,17 +122,16 @@ class ContactType extends AbstractType
                 [
                     'label' => 'Sujet',
                     'choices' => [
-                        'Demande de renseignements' => 'Demande de renseignements',
                         'Demande de devis' => 'Demande de devis',
+                        'Demande d\'information' => 'Demande d\'information',
                         'Autre' => 'Autre',
                     ],
+                    'attr' => ['placeholder' => 'Sujet du message'],
                     'constraints' => [
                         new NotBlank([
                             'message' => 'Merci de choisir un sujet',
                         ]),
                     ],
-                    'expanded' => true,
-                    'multiple' => false,
                 ]
             )
             ->add(

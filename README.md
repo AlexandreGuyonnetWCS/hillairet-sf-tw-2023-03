@@ -2,8 +2,4 @@
 
 To do
 
-path to images
-
-changer l'hébergement dans les mentions légales (si besoin)
-
 sitemap.xml
