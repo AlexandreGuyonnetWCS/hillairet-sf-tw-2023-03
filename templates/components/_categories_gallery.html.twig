@@ -19,9 +19,7 @@
 					</div>
 				</div>
 				<div class="absolute inset-0 z-0">
-					{% set image = category.image.first %}
-					{# <img src="{{ image ? asset('uploads/category/' ~ image.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ category.name }}" class="w-full h-full object-cover"> #}
-					<img src="{{ image.picture }}" alt="{{ category.name }}" class="w-full h-full object-cover">
+					<img src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ category.name }}" class="w-full h-full object-cover">
 					<div class="absolute inset-0 bg-black opacity-20"></div>
 				</div>
 			</div>
