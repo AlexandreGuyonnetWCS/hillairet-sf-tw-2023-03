@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class CategoryCrudController extends AbstractCrudController
@@ -33,10 +35,14 @@ class CategoryCrudController extends AbstractCrudController
             TextareaField::new('summary', 'Résumé')
                 ->setRequired(false)
                 ->setHelp('La résumé doit faire moins de 180 caractères'),
-            TextareaField::new('description', 'Description')
-                ->setRequired(false),
+            TextEditorField::new('description', 'Description')
+                ->setRequired(true),
             CollectionField::new('image', 'Images')
                 ->useEntryCrudForm(),
+            SlugField::new('slug', 'Slug')
+                ->setTargetFieldName('name')
+                ->setRequired(true)
+                ->setHelp('Le slug est généré automatiquement à partir du nom de la prestation'),
         ];
     }
 }

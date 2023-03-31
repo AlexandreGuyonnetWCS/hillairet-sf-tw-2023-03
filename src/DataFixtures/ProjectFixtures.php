@@ -13,6 +13,7 @@ class ProjectFixtures extends Fixture
     public const PROJECTS = [
         [
             'name' => 'Rénovation de la salle de bain',
+            'slug' => 'renovation-de-la-salle-de-bain',
             'description' => 'Nous avons fait appel à l\'entreprise Lexica pour la rénovation de notre salle de bain.
             Nous avons été très satisfaits du travail réalisé.
             Les travaux ont été réalisés dans les délais et le résultat est conforme à nos attentes.
@@ -30,6 +31,7 @@ class ProjectFixtures extends Fixture
         ],
         [
             'name' => 'Terrasse Extérieure',
+            'slug' => 'terrasse-exterieure',
             'description' => 'Ici, nous avons réalisé une terrasse en bois exotique.
             Nous avons utilisé du bois de teck pour sa résistance et sa durabilité.
             Nous avons également réalisé un escalier en bois exotique pour accéder à la terrasse.',
@@ -46,6 +48,7 @@ class ProjectFixtures extends Fixture
         ],
         [
             'name' => 'Rénovation de la cuisine',
+            'slug' => 'renovation-de-la-cuisine',
             'description' => 'Nous avons fait appel à l\'entreprise Lexica pour la rénovation de notre cuisine.
             Nous avons été très satisfaits du travail réalisé.
             Les travaux ont été réalisés dans les délais et le résultat est conforme à nos attentes.
@@ -67,6 +70,7 @@ class ProjectFixtures extends Fixture
         foreach (self::PROJECTS as $value) {
             $project = new Project();
             $project->setName($value['name']);
+            $project->setSlug($value['slug']);
             $project->setDescription($value['description']);
             $project->setPlace($value['place']);
             $project->setCreatedAt(new DateTimeImmutable($value['createdAt']));

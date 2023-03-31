@@ -3,18 +3,21 @@
 	<p class="text-lg text-start text-black mb-8">
 		Nos réalisations sont le reflet de notre savoir-faire et de notre expertise. Nous sommes fiers de vous présenter nos réalisations.
 	</p>
-	<div class="bg-primary p-2 rounded-md">
+	<div class="flex flex-col md:flex-row">
 		<div id="default-carousel" class="relative w-full" data-carousel="static">
 			<div class="relative h-56 overflow-hidden rounded-md md:h-96">
 				{% for project in projects %}
-					<div class="hidden duration-1000 ease-in-out" data-carousel-item>
+				<a href="{{ path('project', {slug: project.slug}) }}">
+					<div class="hidden duration-1000 ease-in-out group" data-carousel-item>
 						<img src="{{ project.image|first ? asset('uploads/project/' ~ project.image|first.picture) : 'https://via.placeholder.com/1920x1080' }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="{{ project.name }}">
-						<div class="absolute w-full h-full p-2 md:p-8 from-black to-transparent bg-gradient-to-r opacity-75">
-							<h3 class="text-2xl font-bold text-white">{{ project.name }}</h3>
-							<p class="text-sm md:text-lg text-white">{{ project.description }}</p>
-							<strong class="text-lg text-white">{{ project.place }}</strong>
+						<div class="absolute w-full h-full p-2 md:p-16 opacity-0 group-hover:opacity-100 cursor-pointer from-primary to-transparent bg-gradient-to-b">
+							<h3 class="text-2xl md:w-1/2 font-bold text-white">{{ project.name }}</h3>
+							<span class="font-bold md:w-1/2 text-white">{{ project.place }}</span>
+							<p class="text-sm md:w-1/2 md:text-lg text-white mb-8">{{ project.description|slice(0, 255) ~ '...' }}</p>
+						<a href="{{ path('project', {slug: project.slug}) }}" class="bg-white hidden md:block md:w-48 py-2 px-4 rounded-md text-primary font-bold hover:bg-primary hover:text-white">Voir la réalisation</a>
 						</div>
 					</div>
+				</a>
 				{% endfor %}
 				<div class="absolute top-0 left-0 flex items-center justify-center w-full h-full">
 					<button class="absolute left-0 z-30 flex items-center justify-center w-12 h-12 text-primary opacity-50 hover:opacity-100 focus:outline-none" data-carousel-prev>

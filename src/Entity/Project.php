@@ -21,6 +21,9 @@ class Project
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\Column(type: 'string', length: 100, unique: true)]
+    private string $slug;
+
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
@@ -66,6 +69,25 @@ class Project
     public function setName(string $name): Project
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug(): string
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     * @return Project
+     */
+    public function setSlug(string $slug): Project
+    {
+        $this->slug = $slug;
 
         return $this;
     }
