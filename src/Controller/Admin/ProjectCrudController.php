@@ -7,8 +7,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ProjectCrudController extends AbstractCrudController
@@ -32,7 +32,7 @@ class ProjectCrudController extends AbstractCrudController
         return [
             TextField::new('name', 'Nom')
                 ->setRequired(true),
-            TextEditorField::new('description', 'Description')
+            TextareaField::new('description', 'Description')
                 ->setRequired(true),
             TextField::new('place', 'Lieu du chantier')
                 ->setRequired(false),
