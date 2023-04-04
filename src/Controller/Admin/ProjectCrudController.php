@@ -36,8 +36,6 @@ class ProjectCrudController extends AbstractCrudController
                 ->setRequired(true),
             TextField::new('place', 'Lieu du chantier')
                 ->setRequired(false),
-            DateTimeField::new('createdAt', 'Date de création')
-                ->setRequired(false),
             CollectionField::new('image', 'Images')
                 ->useEntryCrudForm(),
             SlugField::new('slug', 'Slug')

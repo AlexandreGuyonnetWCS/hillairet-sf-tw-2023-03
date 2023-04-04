@@ -2,9 +2,7 @@
 
 namespace App\DataFixtures;
 
-use DateTimeImmutable;
 use App\Entity\Project;
-use App\Entity\ProjectImage;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -19,7 +17,6 @@ class ProjectFixtures extends Fixture
             Les travaux ont été réalisés dans les délais et le résultat est conforme à nos attentes.
             Nous recommandons cette entreprise.',
             'place' => 'Cognac',
-            'createdAt' => '2023-01-01 00:00:00',
             // 'image' => [
             //     [
             //         'picture' => 'https://image.lexica.art/full_jpg/90b9cf43-24ed-4124-a878-242f482b4beb',
@@ -36,7 +33,6 @@ class ProjectFixtures extends Fixture
             Nous avons utilisé du bois de teck pour sa résistance et sa durabilité.
             Nous avons également réalisé un escalier en bois exotique pour accéder à la terrasse.',
             'place' => 'Royan',
-            'createdAt' => '2022-01-02 00:00:00',
             // 'image' => [
             //     [
             //         'picture' => 'https://image.lexica.art/full_jpg/d4bab463-49ad-4a48-b8f4-e6d2f91ce858',
@@ -54,7 +50,6 @@ class ProjectFixtures extends Fixture
             Les travaux ont été réalisés dans les délais et le résultat est conforme à nos attentes.
             Nous recommandons cette entreprise.',
             'place' => 'Saintes',
-            'createdAt' => '2021-01-03 00:00:00',
             // 'image' => [
             //     [
             //         'picture' => 'https://image.lexica.art/full_jpg/18e39584-1455-472c-a306-e48c7fd13ed6',
@@ -73,7 +68,6 @@ class ProjectFixtures extends Fixture
             $project->setSlug($value['slug']);
             $project->setDescription($value['description']);
             $project->setPlace($value['place']);
-            $project->setCreatedAt(new DateTimeImmutable($value['createdAt']));
             // foreach ($value['image'] as $image) {
             //     $projectImage = new ProjectImage();
             //     $projectImage->setPicture($image['picture']);

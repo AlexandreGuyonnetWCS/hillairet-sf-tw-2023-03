@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProjectRepository;
@@ -29,9 +28,6 @@ class Project
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $place = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?DateTimeImmutable $createdAt = null;
 
     #[ORM\OneToMany(
         mappedBy: 'project',
@@ -126,25 +122,6 @@ class Project
     public function setPlace(?string $place): Project
     {
         $this->place = $place;
-
-        return $this;
-    }
-
-    /**
-     * @return DateTimeImmutable|null
-     */
-    public function getCreatedAt(): ?DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
-
-    /**
-     * @param DateTimeImmutable|null $createdAt
-     * @return Project
-     */
-    public function setCreatedAt(?DateTimeImmutable $createdAt): Project
-    {
-        $this->createdAt = $createdAt;
 
         return $this;
     }
