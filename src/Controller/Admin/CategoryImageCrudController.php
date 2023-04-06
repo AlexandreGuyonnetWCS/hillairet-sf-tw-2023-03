@@ -20,7 +20,7 @@ class CategoryImageCrudController extends AbstractCrudController
                 ->setBasePath('uploads/category/')
                 ->setUploadDir('public/uploads/category')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+                ->setHelp('L\'image ne doit pas dépasser 2Mo'),
         ];
     }
 }

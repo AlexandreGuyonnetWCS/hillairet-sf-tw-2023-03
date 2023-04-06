@@ -20,7 +20,8 @@ class ProjectImageCrudController extends AbstractCrudController
                 ->setBasePath('uploads/project/')
                 ->setUploadDir('public/uploads/project')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
-                ->setRequired(false),
+                ->setRequired(false)
+                ->setHelp('L\'image ne doit pas dépasser 2Mo'),
         ];
     }
 }

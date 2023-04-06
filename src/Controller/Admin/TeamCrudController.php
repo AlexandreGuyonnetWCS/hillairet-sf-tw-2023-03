@@ -25,6 +25,7 @@ class TeamCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Membres de l\'équipe')
             ->setPageTitle('index', 'Liste des membres de l\'équipe')
             ->showEntityActionsInlined()
+            ->renderContentMaximized()
             ->setSearchFields(['id', 'firstName'])
             ->setDefaultSort(['id' => 'DESC']);
     }

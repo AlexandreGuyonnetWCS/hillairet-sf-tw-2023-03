@@ -7,43 +7,37 @@
 	{% set first_favorite = favorite|first %}
 	{% set last_favorite = favorite|last %}
 	<section class="overflow-hidden text-neutral-700">
+
 		<div class="-m-1 flex flex-wrap md:-m-2">
+
 			<div class="flex flex-wrap w-full md:w-1/2">
 				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
-					<span>{{ first_favorite.id }}</span>
 					<img alt="{{ first_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ first_favorite.image|first ? asset('uploads/category/' ~ first_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
 				{% for category in categories|filter(c => c.isFavorite == false)|slice(0, 3) %}
 					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
-						<span>{{ category.id }}</span>
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
 			</div>
+
 			<div class="flex flex-wrap w-full md:w-1/2">
 				{% for category in categories|filter(c => c.isFavorite == false)|slice(3, 6) %}
 					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
-						<span>{{ category.id }}</span>
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
 				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
-					<span>{{ last_favorite.id }}</span>
 					<img alt="{{ last_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ last_favorite.image|first ? asset('uploads/category/' ~ last_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
 			</div>
+			
 		</div>
+
 	</section>
 </div>
 
-
-
-{# <div id="service" class="container mx-auto p-4">
-	<h3 class="text-3xl font-bold text-start text-primary mb-8">Nos prestations</h3>
-	<p class="text-lg text-start text-black mb-8">
-		Voici les différents services que nous proposons à nos clients.
-	</p>
-	<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+	{# <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 		{% for category in categories %}
 			<div class="overflow-hidden cursor-pointer relative group w-full h-64 rounded-sm">
 				<div class="rounded-md z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
@@ -52,11 +46,6 @@
 						<p class="text-lg text-center text-white mb-4">{{ category.summary }}</p>
 						<a href="{{ path('category', { slug: category.slug }) }}" class="bg-white px-4 py-2 font-bold text-center text-primary hover:bg-primary hover:text-white rounded-md">Voir plus</a>
 					</div>
-					<div class="absolute top-0 right-0 flex items-center justify-center">
-						<svg class=" text-white" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-						</svg>
-					</div>
 				</div>
 				<div class="absolute inset-0 z-0">
 					<img src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ category.name }}" class="w-full h-full object-cover">
@@ -64,5 +53,4 @@
 				</div>
 			</div>
 		{% endfor %}
-	</div>
-</div> #}
+	</div> #}

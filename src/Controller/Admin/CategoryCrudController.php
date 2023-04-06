@@ -27,6 +27,7 @@ class CategoryCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Prestation')
             ->setEntityLabelInPlural('Prestations')
             ->setPageTitle('index', 'Liste des prestations')
+            ->renderContentMaximized()
             ->showEntityActionsInlined()
             ->setSearchFields(['id', 'name', 'image', 'summary'])
             ->setPaginatorPageSize(10);

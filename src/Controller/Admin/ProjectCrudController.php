@@ -26,6 +26,7 @@ class ProjectCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Projets')
             ->setPageTitle('index', 'Liste des projets')
             ->showEntityActionsInlined()
+            ->renderContentMaximized()
             ->setSearchFields(['id', 'name', 'description', 'place', 'created_at'])
             ->setPaginatorPageSize(10);
     }
