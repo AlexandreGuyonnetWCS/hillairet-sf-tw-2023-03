@@ -23,6 +23,9 @@ class Category
     #[ORM\Column(type: 'string', length: 100, unique: true)]
     private string $slug;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $isFavorite = false;
+
     #[ORM\Column(length: 200, nullable: true)]
     private ?string $summary = null;
 
@@ -84,6 +87,25 @@ class Category
     public function setSlug(string $slug): Category
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFavorite(): bool
+    {
+        return $this->isFavorite;
+    }
+
+    /**
+     * @param bool $isFavorite
+     * @return Category
+     */
+    public function setIsFavorite(bool $isFavorite): Category
+    {
+        $this->isFavorite = $isFavorite;
 
         return $this;
     }

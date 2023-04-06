@@ -1,4 +1,40 @@
-<div id="service" class="container mx-auto p-4">
+<div id="service" class="container mx-auto py-2 px-5 lg:px-16 lg:pt-24">
+	<h3 class="text-3xl font-bold text-start text-primary mb-8">Nos prestations</h3>
+	<p class="text-lg text-start text-black mb-8">
+		Voici les différents services que nous proposons à nos clients.
+	</p>
+	{% set favorite = categories|filter(c => c.isFavorite == true) %}
+	{% set first_favorite = favorite|first %}
+	{% set last_favorite = favorite|last %}
+	<section class="overflow-hidden text-neutral-700">
+		<div class="-m-1 flex flex-wrap md:-m-2">
+			<div class="flex flex-wrap w-full md:w-1/2">
+				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+					<img alt="{{ first_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ first_favorite.image|first ? asset('uploads/category/' ~ first_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
+				</div>
+				{% for category in categories|slice(1, 3) %}
+					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="flex flex-wrap w-full md:w-1/2">
+				{% for category in categories|slice(4, -1) %}
+					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
+					</div>
+				{% endfor %}
+				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+					<img alt="{{ last_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ last_favorite.image|first ? asset('uploads/category/' ~ last_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+
+{# <div id="service" class="container mx-auto p-4">
 	<h3 class="text-3xl font-bold text-start text-primary mb-8">Nos prestations</h3>
 	<p class="text-lg text-start text-black mb-8">
 		Voici les différents services que nous proposons à nos clients.
@@ -25,4 +61,4 @@
 			</div>
 		{% endfor %}
 	</div>
-</div>
+</div> #}

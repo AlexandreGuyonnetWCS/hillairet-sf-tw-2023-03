@@ -13,6 +13,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Terrasse Bois',
             'slug' => 'terrasse-bois',
+            'isFavorite' => true,
             'summary' => 'Les terrasses en bois sont très prisées pour leur
             aspect naturel et leur facilité d\'entretien. 
             Elles peuvent être installées sur tous les types de sols.',
@@ -40,6 +41,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Cuisine Aménagée',
             'slug' => 'cuisine-aménagée',
+            'isFavorite' => true,
             'summary' => 'La cuisine est la pièce maîtresse de la maison.
             Nous vous proposons des cuisines sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -66,6 +68,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Fermeture, Portail',
             'slug' => 'fermeture-portail',
+            'isFavorite' => false,
             'summary' => 'Les fermetures sont des éléments de la maison.
             Nous vous proposons des portes, fenêtres, volets,
             portails sur mesure.',
@@ -93,6 +96,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Charpente, Escalier, Parquet',
             'slug' => 'charpente-escalier-parquet',
+            'isFavorite' => false,
             'summary' => 'La charpente est un élément essentiel de la maison.
             Elle doit être à la fois esthétique et fonctionnelle.
             Nous vous proposons des charpentes sur mesure.',
@@ -120,6 +124,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Aménagement Intérieur',
             'slug' => 'aménagement-intérieur',
+            'isFavorite' => false,
             'summary' => 'L\'aménagement intérieur est un élément essentiel de la maison.
             Nous vous proposons des aménagements intérieurs sur mesure, adaptés à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -146,6 +151,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Maison ossature bois',
             'slug' => 'maison-ossature-bois',
+            'isFavorite' => false,
             'summary' => 'La maison ossature bois est un élément essentiel de la maison.
             Nous vous proposons des maisons ossature bois sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -172,6 +178,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Isolation',
             'slug' => 'isolation',
+            'isFavorite' => false,
             'summary' => 'L\'isolation est un élément essentiel de la maison.
             Nous vous proposons des isolations sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -198,6 +205,7 @@ class CategoryFixtures extends Fixture
         [
             'name' => 'Menuiserie bois, PVC, Aluminium',
             'slug' => 'menuiserie-bois-pvc-aluminium',
+            'isFavorite' => false,
             'summary' => 'La menuiserie est un élément essentiel de la maison.
             Nous vous proposons des menuiseries sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
@@ -221,32 +229,33 @@ class CategoryFixtures extends Fixture
             //     ],
             // ],
         ],
-        [
-            'name' => 'Meuble de salle de bains',
-            'slug' => 'meuble-de-salle-de-bains',
-            'summary' => 'Le meuble de salle de bains est un élément essentiel de la maison.
-            Nous vous proposons des meubles de salle de bains sur mesure, adaptés à vos besoins et à votre budget.',
-            'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
-            du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
-            L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
-            possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle
-            du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web
-            ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum'
-            vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction.
-            Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement
-            (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).`",
-            // 'image' => [
-            //     [
-            //         'picture' => 'https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_960_720.jpg',
-            //     ],
-            //     [
-            //         'picture' => 'https://cdn.pixabay.com/photo/2016/11/29/05/45/terrace-1867613_960_720.jpg',
-            //     ],
-            //     [
-            //         'picture' => 'https://cdn.pixabay.com/photo/2016/11/29/05/45/terrace-1867613_960_720.jpg',
-            //     ],
-            // ],
-        ],
+        // [
+        //     'name' => 'Meuble de salle de bains',
+        //     'slug' => 'meuble-de-salle-de-bains',
+        //     'isFavorite' => false,
+        //     'summary' => 'Le meuble de salle de bains est un élément essentiel de la maison.
+        //     Nous vous proposons des meubles de salle de bains sur mesure, adaptés à vos besoins et à votre budget.',
+        //     'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
+        //     du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
+        //     L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
+        //     possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle
+        //     du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web
+        //     ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour 'Lorem Ipsum'
+        //     vous conduira vers de nombreux sites qui n'en sont encore qu'à leur phase de construction.
+        //     Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement
+        //     (histoire d'y rajouter de petits clins d'oeil, voire des phrases embarassantes).`",
+        //     // 'image' => [
+        //     //     [
+        //     //         'picture' => 'https://cdn.pixabay.com/photo/2017/03/22/17/39/kitchen-2165756_960_720.jpg',
+        //     //     ],
+        //     //     [
+        //     //         'picture' => 'https://cdn.pixabay.com/photo/2016/11/29/05/45/terrace-1867613_960_720.jpg',
+        //     //     ],
+        //     //     [
+        //     //         'picture' => 'https://cdn.pixabay.com/photo/2016/11/29/05/45/terrace-1867613_960_720.jpg',
+        //     //     ],
+        //     // ],
+        // ],
     ];
     public function load(ObjectManager $manager): void
     {
@@ -254,6 +263,7 @@ class CategoryFixtures extends Fixture
             $category = new Category();
             $category->setName($categoryData['name']);
             $category->setSlug($categoryData['slug']);
+            $category->setIsFavorite($categoryData['isFavorite']);
             $category->setSummary($categoryData['summary']);
             $category->setDescription($categoryData['description']);
             // foreach ($categoryData['image'] as $image) {
