@@ -10,21 +10,25 @@
 		<div class="-m-1 flex flex-wrap md:-m-2">
 			<div class="flex flex-wrap w-full md:w-1/2">
 				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+					<span>{{ first_favorite.id }}</span>
 					<img alt="{{ first_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ first_favorite.image|first ? asset('uploads/category/' ~ first_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
-				{% for category in categories|slice(1, 3) %}
+				{% for category in categories|filter(c => c.isFavorite == false)|slice(0, 3) %}
 					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+						<span>{{ category.id }}</span>
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
 			</div>
 			<div class="flex flex-wrap w-full md:w-1/2">
-				{% for category in categories|slice(4, -1) %}
+				{% for category in categories|filter(c => c.isFavorite == false)|slice(3, 6) %}
 					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+						<span>{{ category.id }}</span>
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
 				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+					<span>{{ last_favorite.id }}</span>
 					<img alt="{{ last_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ last_favorite.image|first ? asset('uploads/category/' ~ last_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
 			</div>
