@@ -3,54 +3,30 @@
 	<p class="text-lg text-start text-black mb-8">
 		Voici les différents services que nous proposons à nos clients.
 	</p>
-	{% set favorite = categories|filter(c => c.isFavorite == true) %}
-	{% set first_favorite = favorite|first %}
-	{% set last_favorite = favorite|last %}
+	{% set first_favorite = categories|filter(c => c.isFavorite == true)|first %}
+	{% set last_favorite = categories|filter(c => c.isFavorite == true)|last %}
 	<section class="overflow-hidden text-neutral-700">
-
 		<div class="-m-1 flex flex-wrap md:-m-2">
-
 			<div class="flex flex-wrap w-full md:w-1/2">
-				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+				<div class="w-full p-1 md:p-2 md:h-[480px] h-[240px]">
 					<img alt="{{ first_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ first_favorite.image|first ? asset('uploads/category/' ~ first_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
 				{% for category in categories|filter(c => c.isFavorite == false)|slice(0, 3) %}
-					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:h-[240px] h-[240px]">
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
 			</div>
-
 			<div class="flex flex-wrap w-full md:w-1/2">
 				{% for category in categories|filter(c => c.isFavorite == false)|slice(3, 6) %}
-					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:max-h-[240px] max-h-[240px]">
+					<div class="w-full sm:w-1/2 md:w-1/3 p-1 md:p-2 md:h-[240px] h-[240px]">
 						<img alt="{{ category.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 					</div>
 				{% endfor %}
-				<div class="w-full p-1 md:p-2 md:max-h-[480px] max-h-[240px]">
+				<div class="w-full p-1 md:p-2 md:h-[480px] h-[240px]">
 					<img alt="{{ last_favorite.name }}" class="block h-full w-full rounded-sm object-cover object-center" src="{{ last_favorite.image|first ? asset('uploads/category/' ~ last_favorite.image|first.picture) : 'https://via.placeholder.com/500x500' }}"/>
 				</div>
 			</div>
-			
 		</div>
-
 	</section>
 </div>
-
-	{# <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-		{% for category in categories %}
-			<div class="overflow-hidden cursor-pointer relative group w-full h-64 rounded-sm">
-				<div class="rounded-md z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
-					<div class="flex flex-col items-center justify-center p-4">
-						<h3 class="text-2xl font-bold text-center text-white mb-4">{{ category.name }}</h3>
-						<p class="text-lg text-center text-white mb-4">{{ category.summary }}</p>
-						<a href="{{ path('category', { slug: category.slug }) }}" class="bg-white px-4 py-2 font-bold text-center text-primary hover:bg-primary hover:text-white rounded-md">Voir plus</a>
-					</div>
-				</div>
-				<div class="absolute inset-0 z-0">
-					<img src="{{ category.image|first ? asset('uploads/category/' ~ category.image|first.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ category.name }}" class="w-full h-full object-cover">
-					<div class="absolute inset-0 bg-black opacity-20"></div>
-				</div>
-			</div>
-		{% endfor %}
-	</div> #}
