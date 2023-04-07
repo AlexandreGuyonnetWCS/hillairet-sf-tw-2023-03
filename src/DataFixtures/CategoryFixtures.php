@@ -14,9 +14,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Terrasse Bois',
             'slug' => 'terrasse-bois',
             'isFavorite' => true,
-            'summary' => 'Les terrasses en bois sont très prisées pour leur
-            aspect naturel et leur facilité d\'entretien. 
-            Elles peuvent être installées sur tous les types de sols.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -42,8 +39,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Cuisine Aménagée',
             'slug' => 'cuisine-aménagée',
             'isFavorite' => true,
-            'summary' => 'La cuisine est la pièce maîtresse de la maison.
-            Nous vous proposons des cuisines sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -69,9 +64,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Fermeture, Portail',
             'slug' => 'fermeture-portail',
             'isFavorite' => false,
-            'summary' => 'Les fermetures sont des éléments de la maison.
-            Nous vous proposons des portes, fenêtres, volets,
-            portails sur mesure.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -97,9 +89,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Charpente, Escalier, Parquet',
             'slug' => 'charpente-escalier-parquet',
             'isFavorite' => false,
-            'summary' => 'La charpente est un élément essentiel de la maison.
-            Elle doit être à la fois esthétique et fonctionnelle.
-            Nous vous proposons des charpentes sur mesure.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -125,8 +114,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Aménagement Intérieur',
             'slug' => 'aménagement-intérieur',
             'isFavorite' => false,
-            'summary' => 'L\'aménagement intérieur est un élément essentiel de la maison.
-            Nous vous proposons des aménagements intérieurs sur mesure, adaptés à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -152,8 +139,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Maison ossature bois',
             'slug' => 'maison-ossature-bois',
             'isFavorite' => false,
-            'summary' => 'La maison ossature bois est un élément essentiel de la maison.
-            Nous vous proposons des maisons ossature bois sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -179,8 +164,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Isolation',
             'slug' => 'isolation',
             'isFavorite' => false,
-            'summary' => 'L\'isolation est un élément essentiel de la maison.
-            Nous vous proposons des isolations sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -206,8 +189,6 @@ class CategoryFixtures extends Fixture
             'name' => 'Menuiserie bois, PVC, Aluminium',
             'slug' => 'menuiserie-bois-pvc-aluminium',
             'isFavorite' => false,
-            'summary' => 'La menuiserie est un élément essentiel de la maison.
-            Nous vous proposons des menuiseries sur mesure, adaptées à vos besoins et à votre budget.',
             'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
             du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
             L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -233,8 +214,6 @@ class CategoryFixtures extends Fixture
         //     'name' => 'Meuble de salle de bains',
         //     'slug' => 'meuble-de-salle-de-bains',
         //     'isFavorite' => false,
-        //     'summary' => 'Le meuble de salle de bains est un élément essentiel de la maison.
-        //     Nous vous proposons des meubles de salle de bains sur mesure, adaptés à vos besoins et à votre budget.',
         //     'description' => "`On sait depuis longtemps que travailler avec du texte lisible et contenant
         //     du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
         //     L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte. Du texte. Du texte.' est qu'il
@@ -264,7 +243,6 @@ class CategoryFixtures extends Fixture
             $category->setName($categoryData['name']);
             $category->setSlug($categoryData['slug']);
             $category->setIsFavorite($categoryData['isFavorite']);
-            $category->setSummary($categoryData['summary']);
             $category->setDescription($categoryData['description']);
             // foreach ($categoryData['image'] as $image) {
             //     $categoryImage = new CategoryImage();

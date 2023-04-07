@@ -9,7 +9,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -41,9 +40,6 @@ class CategoryCrudController extends AbstractCrudController
             BooleanField::new('isFavorite', 'Favoris')
                 ->setRequired(false)
                 ->hideOnForm(),
-            TextareaField::new('summary', 'Résumé')
-                ->setRequired(false)
-                ->setHelp('La résumé doit faire moins de 180 caractères'),
             TextEditorField::new('description', 'Description')
                 ->setRequired(true),
             CollectionField::new('image', 'Images')

@@ -27,7 +27,7 @@ class Category
     private bool $isFavorite = false;
 
     #[ORM\Column(length: 200, nullable: true)]
-    private ?string $summary = null;
+    private ?string $summary;
 
     #[ORM\Column(type: 'text', nullable: true)]
     private ?string $description = null;
@@ -40,6 +40,15 @@ class Category
     )]
     private Collection $image;
 
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    // render summary with a truncate of 100 characters from description|raw
+    public function truncateDescription(): void
+    {
+        if (null !== $this->description) {
+            $this->summary = substr($this->description, 0, 100);
+        }
+    }
     public function __construct()
     {
         $this->image = new ArrayCollection();

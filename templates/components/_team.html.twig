@@ -4,21 +4,21 @@
 		Dans toutes circonstances, nous sommes là pour vous accompagner et vous conseiller. Notre équipe est composée de professionnels de l’immobilier, de l’architecture et du bâtiment. Nous sommes à votre écoute pour vous aider à concrétiser votre projet.
 	</p>
 	<div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
-		<button aria-label="slide backward" class="hidden md:block absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+		<button aria-label="slide backward" class="absolute z-30 left-0 md:ml-16 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
 			<svg class="text-primary" width="16" height="32" viewbox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
 		</button>
 		<div class="w-full relative flex items-center justify-center">
-			<div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-				<div id="slider" class="h-full flex flex-col sm:flex-row lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+			<div class="mx-auto overflow-x-hidden overflow-y-hidden">
+				<div id="slider" class="h-full flex flex-row gap-8 items-center justify-start transition ease-out duration-700">
 					{% for team in teams %}
-						<div class="overflow-hidden bg-secondary p-2 cursor-pointer relative group flex flex-shrink-0 w-56 h-100">
-							<div class="rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-primary to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+						<div class="overflow-hidden cursor-pointer relative group flex flex-shrink-0">
+							<div class="rounded-sm z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center">
 								<div>
 									<div class="p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-										<div class="font-bold">{{ team.firstName }}</div>
-										<div class="text-sm font-bold">
+										<div class="font-bold text-primary">{{ team.firstName }}</div>
+										<div class="text-sm font-bold text-white">
 											{{ team.summary }}
 										</div>
 									</div>
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 		</div>
-		<button aria-label="slide forward" class="hidden md:block absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next">
+		<button aria-label="slide forward" class="absolute z-30 right-0 md:mr-16 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="next">
 			<svg class="text-primary" width="16" height="32" viewbox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 			</svg>
