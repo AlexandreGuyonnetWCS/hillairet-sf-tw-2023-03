@@ -27,7 +27,6 @@ class CategoryCrudController extends AbstractCrudController
             ->setEntityLabelInPlural('Prestations')
             ->setPageTitle('index', 'Liste des prestations')
             ->renderContentMaximized()
-            ->showEntityActionsInlined()
             ->setSearchFields(['id', 'name', 'image', 'summary'])
             ->setPaginatorPageSize(10);
     }
@@ -49,14 +48,5 @@ class CategoryCrudController extends AbstractCrudController
                 ->setRequired(true)
                 ->setHelp('Le slug est généré automatiquement à partir du nom de la prestation'),
         ];
-    }
-
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions
-        ->add(Crud::PAGE_INDEX, 'detail')
-        ->update(Crud::PAGE_INDEX, 'detail', function (Action $action) {
-            return $action->setLabel('voir')->setIcon('fa fa-eye');
-        });
     }
 }

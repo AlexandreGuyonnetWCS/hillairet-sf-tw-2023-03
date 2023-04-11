@@ -24,7 +24,6 @@ class TeamCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Membre de l\'équipe')
             ->setEntityLabelInPlural('Membres de l\'équipe')
             ->setPageTitle('index', 'Liste des membres de l\'équipe')
-            ->showEntityActionsInlined()
             ->renderContentMaximized()
             ->setSearchFields(['id', 'firstName'])
             ->setDefaultSort(['id' => 'DESC']);
@@ -44,14 +43,5 @@ class TeamCrudController extends AbstractCrudController
                 ->setRequired(false)
                 ->setHelp('La description doit faire moins de 255 caractères'),
         ];
-    }
-
-    public function configureActions(Actions $actions): Actions
-    {
-        return $actions
-        ->add(Crud::PAGE_INDEX, 'detail')
-        ->update(Crud::PAGE_INDEX, 'detail', function (Action $action) {
-            return $action->setLabel('voir')->setIcon('fa fa-eye');
-        });
     }
 }
