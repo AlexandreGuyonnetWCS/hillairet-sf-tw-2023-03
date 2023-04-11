@@ -1,0 +1,21 @@
+<div class="bg-black text-center text-white">
+	<div class="flex items-center justify-center border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
+		<div class="mx-6 py-10 text-center md:text-left">
+			<div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+				<div class="flex flex-col items-center justify-center">
+					{% include "components/footer/_info.html.twig" %}
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					{% include "components/footer/_map.html.twig" %}
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					{% include "components/footer/_links.html.twig" %}
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					{% include "components/footer/_contact.html.twig" %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% include "components/footer/_back_footer.html.twig" %}
+</div>

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Contact
+{% endblock %}
+
+{% block body %}
+	<div class="container mx-auto my-16 p-8 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-lg shadow-lg">
+
+		{% include "components/_alert_error.html.twig" %}
+
+		<h1 class="text-5xl font-bold text-primary dark:text-white">Contact</h1>
+		<p class="text-gray-800 dark:text-gray-400">Vous avez une question ? N'hésitez pas à nous contacter, nous vous répondrons dans les plus brefs délais.</p>
+		{{ form_start(form) }}
+		<div class="my-16">
+			<div class="grid md:grid-cols-2 md:gap-6">
+				<div class="relative z-0 w-full mb-6 group">
+					{{ form_widget(form.firstname, {'attr': {'class': 'block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+					<label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-500 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prénom</label>
+				</div>
+				<div class="relative z-0 w-full mb-6 group">
+					{{ form_widget(form.lastname, {'attr': {'class': 'block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+					<label for="floating_last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-500 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nom</label>
+				</div>
+			</div>
+			<div class="grid md:grid-cols-2 md:gap-6">
+				<div class="relative z-0 w-full mb-6 group">
+					{{ form_widget(form.email, {'attr': {'class': 'block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+					<label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-500 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+				</div>
+				<div class="relative z-0 w-full mb-6 group">
+					{{ form_widget(form.phone, {'attr': {'class': 'block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+					<label for="floating_phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-500 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Téléphone</label>
+				</div>
+			</div>
+			<div class="relative z-0 w-full mb-6 group">
+			<label for="floating_subject" class="mt-8 block mb-2 text-sm font-medium text-gray-500 dark:text-white">En quoi consiste votre demande ?</label>
+				{{ form_widget(form.subject, {'attr': {'class': 'block px-0 w-full text-sm text-teal-500 bg-transparent border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+			</div>
+			<div class="relative z-0 w-full mb-6 group">
+				{{ form_widget(form.message, {'attr': {'class': 'block px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-400 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-teal-500 focus:outline-none focus:ring-0 focus:border-teal-500 peer', 'placeholder': ' ', 'required': 'required'}}) }}
+				<label for="floating_message" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-teal-500 peer-focus:dark:text-teal-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Message</label>
+			</div>
+			<div class="relative z-0 w-full mb-6 group flex items-center">
+				{{ form_widget(form.rgpd) }}
+				<label for="floating_rgpd" class="px-8 peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-primary peer-focus:dark:text-primary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+					Je consens à ce que les données que j'ai soumises soient collectées et stockées en vue
+					d'être utilisées pour traiter ma demande. Voir notre politique de protection des données personnelles.
+					Vous disposez d'un droit d'accès, de rectification et d'opposition.
+				</label>
+			</div>
+			<div class="flex justify-end">
+				<button type="submit" class="px-8 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-teal-500 border border-transparent rounded-lg active:bg-teal-600 hover:bg-teal-600 focus:outline-none focus:shadow-outline-teal">Envoyez</button>
+			</div>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

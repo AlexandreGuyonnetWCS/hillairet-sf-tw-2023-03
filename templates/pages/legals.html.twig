@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Mentions légales
+{% endblock %}
+
+{% block body %}
+	<div class="container mx-auto">
+		<div class="flex flex-col items-center justify-center h-full">
+			<div class="flex flex-col  w-2/3">
+				<h1 class="text-4xl font-bold text-primary text-center my-16">Mentions légales</h1>
+				<p class="text-center">Le site {{ app.request.server.get('HTTP_HOST') }} est édité par : <strong>Menuiserie Hillairet</strong></p>
+				<p class="my-16">
+					<strong class="underline">Loi informatique et libertés :</strong><br>
+                    Conformément à l'article 39 de la loi "Informatique et Libertés" du 6 janvier 1978,
+                    l'utilisateur dispose d'un droit d'accès, de modification,
+                    de rectification et de suppression des données le concernant. 
+                    Pour l'exercice de ces droits, l'utilisateur est invité à s'adresser par courriel à 
+                    <strong>mshillairet@nordnet.fr</strong> . Il peut aussi écrire au responsable de publication :
+				</p>
+                <p class="text-center">
+                    <strong>Hillairet et fils</strong><br>
+                    <strong>5 av. de Gémozac</strong><br>
+                    <strong>ZI des charriers</strong><br>
+                    <strong>17100 Saintes</strong><br>
+                    <strong>Tél. : 05 46 74 09 00</strong><br>
+                    <strong>Fax. : 05 46 92 68 70</strong><br>
+                    <strong>Siret : 441 630 738 00017 – APE 4332A</strong><br>
+                    <strong>Capital social : 7500 €</strong><br>
+                </p>
+                <p class="my-16">
+                    L'utilisateur peut également, pour des motifs légitimes,
+                    s'opposer au traitement des données le concernant.
+                    L'utilisateur trouvera des informations sur ses droits et devoir
+                    et sur la protection des données individuelles sur le site de la 
+                    "Commission Nationale Informatique et Libertés". Les utilisateurs du site Internet
+                    {{ app.request.server.get('HTTP_HOST') }} sont invités à faire connaître à  <strong>Hillairet et fils</strong>
+                    leurs remarques sur d'éventuels dysfonctionnements du site, au regard des libertés individuelles,
+                    à l'une ou l'autre des adresses indiquées ci-avant.
+                </p>
+                <p class="my-16">
+                    <strong class="underline">Propriété intellectuelle :</strong><br>
+                    Toute reproduction intégrale ou partielle, par quelque procédé que ce soit,
+                    faite sans le consentement préalable et écrit de  Hillairet et fils
+                    est illicite et constitue une contrefaçon donnant lieu à des sanctions pénales.
+                    Conformément aux dispositions de la loi n 98-536 du 1er juillet 1998,
+                    portant transposition dans le Code de la propriété intellectuelle de la
+                    directive 96/9/CE du 11 mars 1996, concernant la protection juridique des bases de données,
+                    Hillairet et fils est producteur de sa base de données, accessible sur le présent site,
+                    et dont elle est seule propriétaire. En accédant au présent site,
+                    vous reconnaissez que les données le composant sont légalement protégées et,
+                    conformément aux dispositions de la loi du 1er juillet 1998,
+                    vous vous interdisez notamment d'extraire, réutiliser, stocker, reproduire,
+                    représenter ou conserver, directement ou indirectement, sur un support quelconque,
+                    par tout moyen et sous toute forme que ce soit, tout ou partie qualitativement ou
+                    quantitativement substantielle du site auquel vous accédez ainsi que d'en faire
+                    l'extraction ou la réutilisation répétée et systématique de parties qualitativement
+                    et quantitativement non substantielles lorsque ces opérations excèdent manifestement
+                    les conditions d'utilisation normales.
+                </p>
+                <p class="my-16">
+                    <strong class="underline">Liens hypertextes :</strong><br>
+                    Le site {{ app.request.server.get('HTTP_HOST') }} peut contenir des liens hypertextes
+                    vers d'autres sites présents sur le réseau Internet.
+                    Hillairet et fils ne peut être tenue pour responsable du contenu des sites
+                    ainsi visités, ni des éventuelles conséquences de leur utilisation.
+                    Les liens hypertextes mis en place dans le cadre du présent site en direction d'autres
+                    ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de
+                    Hillairet et fils.
+                </p>
+                <p class="my-16">
+                    <strong class="underline">Droit applicable :</strong><br>
+                    Le présent site est soumis à la loi française. En cas de litige, les tribunaux français
+                    seront seuls compétents.
+                </p>
+                <p class="my-16">
+                    <strong class="underline">Cookies :</strong><br>
+                    Lors de la consultation du site {{ app.request.server.get('HTTP_HOST') }},
+                    des informations relatives à la navigation de votre ordinateur sur notre site
+                    (les pages que vous avez consultées, la date et l'heure de la consultation, etc.)
+                    sont susceptibles d'être enregistrées dans des fichiers "cookies" installés sur votre
+                    ordinateur. Ces fichiers sont utilisés pour des besoins de statistiques et d'affichage,
+                    et ne permettent pas d'identifier personnellement l'utilisateur.
+                    Vous pouvez vous opposer à l'enregistrement de ces fichiers "cookies" en configurant
+                    votre navigateur de la manière suivante :
+                </p>
+                <ul class="list-disc list-inside">
+                    <li>Microsoft Internet Explorer : Outils > Options Internet > Confidentialité > Paramètres</li>
+                    <li>Firefox : Outils > Options > Vie privée > Cookies</li>
+                    <li>Google Chrome : Paramètres > Options > Options avancées > Confidentialité > Paramètres de contenu</li>
+                    <li>Safari : Edition > Préférences > Sécurité</li>
+                </ul>
+                <p class="my-16">
+                    <strong class="underline">Hébergement :</strong><br>
+                    Le site {{ app.request.server.get('HTTP_HOST') }} est hébergé par : <strong>O2switch</strong><br>
+                    <strong>Adresse : 222-224 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand</strong><br>
+                    <strong>Tél. : 04 44 44 60 40</strong><br>
+                    <strong>Site web : <a href="https://www.o2switch.fr" target="_blank">https://www.o2switch.fr</a></strong><br>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

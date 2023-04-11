@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Plan du site
+{% endblock %}
+
+{% block body %}
+	<div class="container mx-auto py-16">
+		<div class="flex flex-col items-center justify-center h-full">
+			<div class="flex flex-col  w-2/3">
+				<h1 class="text-4xl font-bold text-primary text-center my-16">
+					Plan du site
+				</h1>
+				<div class="flex flex-col">
+					<div class="flex flex-col">
+						<h2 class="text-2xl font-bold text-primary my-4">
+							Les catégories
+						</h2>
+						<ul class="list-disc list-inside">
+							{% for category in categories %}
+								<li>
+									<a href="{{ path('category', {slug: category.slug}) }}" class="text-primary hover:text-secondary">
+										{{ category.name }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="flex flex-col">
+						<h2 class="text-2xl font-bold text-primary my-4">
+							Les liens du site
+						</h2>
+						<ul class="list-disc list-inside">
+							{% set links = [
+                                {name: 'Accueil', path: 'home'},
+                                {name: 'Contact', path: 'contact'},
+                                {name: 'Mentions légales', path: 'legals'},
+                                {name: 'Plan du site', path: 'sitemap'},
+                            ] %}
+							{% for link in links %}
+								<li>
+									<a href="{{ path(link.path) }}" class="text-primary hover:text-secondary">
+										{{ link.name }}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

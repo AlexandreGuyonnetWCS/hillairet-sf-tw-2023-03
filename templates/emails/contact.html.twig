@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message de {{ Prénom }} {{ Nom }}</title>
+  <style>
+    /* Styles pour le template d'email */
+    
+    /* Utilisez des media queries pour rendre le template responsive */
+    @media only screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+    }
+    
+    /* Styles pour les éléments du template */
+    .credentials {
+      font-size: 36px;
+      color: #4A4A4A;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+    .subject {
+      font-size: 24px;
+      color: #4A4A4A;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .message {
+      font-size: 14px;
+      color: #4A4A4A;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .email {
+      font-size: 14px;
+      color: #4A4A4A;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .phone {
+      font-size: 14px;
+      color: #4A4A4A;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    
+    /* Personnalisez les styles ci-dessous */
+    body {
+      margin: 0;
+      padding: 30px 0;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-weight: 700;
+    }
+    p {
+      line-height: 1.5;
+    }
+    .subject {
+      font-weight: 700;
+    }
+    .email {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <table style="width: 100%; max-width: 600px; margin: 0 auto;">
+    <tr>
+      <td style="background-color: #F7F7F7; padding: 30px;">
+        <h1 class="credentials">Message de {{ Prénom }} {{ Nom }}</h1>
+        <h2 class="subject">{{ Sujet }}</h2>
+        <p class="message">{{ Message }}</p>
+        <p class="email">Adresse mail : {{ Email }}</p>
+        <p class="phone">Numéro de téléphone : {{ Téléphone }}</p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

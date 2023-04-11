@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	- Accueil
+{% endblock %}
+
+{% block body %}
+	{% include "components/_alert_success.html.twig" %}
+	<div class="container mx-auto">
+		<div class="flex flex-wrap justify-center content-center my-8">
+			<div class="w-full md:w-1/2">
+				<img
+				src="{{ asset('build/images/logo.png') }}"
+				alt="Logo Menuiserie Saintaise"
+				class="mx-auto"
+			>
+			</div>
+			<hr class="border-primary border-1 w-64 h-1 my-8 sm:hidden">
+			<div class="w-full md:w-1/2">
+				<div class="text-center">
+					<h1 class="text-5xl font-bold text-primary">Menuiserie Saintaise</h1>
+					<h2 class="text-2xl my-8 font-bold text-gray-700">Hillairet & Fils</h2>
+					<p class="text-xl text-gray-700">Votre artisan menuisier à
+						<strong>Saintes&nbsp;,Cognac&nbsp;</strong>et <strong>Royan</strong>,
+					</p>
+				</div>
+			</div>
+		</div>
+		{{ render(controller('App\\Controller\\CategoryController::gallery')) }}
+		{% include "components/_about.html.twig" %}
+		{{ render(controller('App\\Controller\\TeamController::team')) }}
+		{{ render(controller('App\\Controller\\ProjectController::project')) }}
+		{% include "components/_guarantees.html.twig" %}
+	</div>
+{% endblock %}
