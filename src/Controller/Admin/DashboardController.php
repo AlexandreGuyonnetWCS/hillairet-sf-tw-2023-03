@@ -15,7 +15,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 class DashboardController extends AbstractDashboardController
 {
     #[Route('/admin', name: 'admin')]
-    #[IsGranted('ROLE_ADMIN')]
+    // #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
         return $this->render('admin.html.twig');
@@ -25,7 +25,6 @@ class DashboardController extends AbstractDashboardController
     {
         return Dashboard::new()
             ->setTitle('Hillairet menuiserie')
-            ->setFaviconPath('build/images/favicon.png')
             ->renderContentMaximized();
     }
 

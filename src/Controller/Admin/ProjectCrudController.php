@@ -25,6 +25,7 @@ class ProjectCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Projet')
             ->setEntityLabelInPlural('Projets')
             ->setPageTitle('index', 'Liste des projets')
+            ->showEntityActionsInlined()
             ->renderContentMaximized()
             ->setSearchFields(['id', 'name', 'description', 'place', 'created_at'])
             ->setPaginatorPageSize(10);
@@ -46,5 +47,14 @@ class ProjectCrudController extends AbstractCrudController
                 ->setRequired(true)
                 ->setHelp('Le slug est généré automatiquement à partir du nom du projet'),
         ];
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+        ->add(Crud::PAGE_INDEX, 'detail')
+        ->update(Crud::PAGE_INDEX, 'detail', function (Action $action) {
+            return $action->setLabel('voir')->setIcon('fa fa-eye');
+        });
     }
 }
