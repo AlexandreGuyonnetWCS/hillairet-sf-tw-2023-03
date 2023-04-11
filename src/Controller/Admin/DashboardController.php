@@ -24,7 +24,9 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Hillairet menuiserie');
+            ->setTitle('Hillairet menuiserie')
+            ->setFaviconPath('build/images/favicon.png')
+            ->renderContentMaximized();
     }
 
     public function configureMenuItems(): iterable
