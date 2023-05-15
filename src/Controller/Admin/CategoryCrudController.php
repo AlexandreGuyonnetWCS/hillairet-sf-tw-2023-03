@@ -8,8 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
@@ -42,8 +42,11 @@ class CategoryCrudController extends AbstractCrudController
                 ->hideOnForm(),
             TextEditorField::new('description', 'Description')
                 ->setRequired(true),
-            CollectionField::new('image', 'Images')
-                ->useEntryCrudForm(),
+            ImageField::new('Image', 'Image')
+                ->setBasePath('uploads/category/')
+                ->setUploadDir('public/uploads/category')
+                ->setUploadedFileNamePattern('[randomhash].[extension]')
+                ->setHelp('L\'image ne doit pas dépasser 2Mo'),
             SlugField::new('slug', 'Slug')
                 ->setTargetFieldName('name')
                 ->setRequired(true)

@@ -22,7 +22,12 @@
 				<div class="w-4/5 md:w-1/3 p-4">
 					<div class="bg-white shadow-sm rounded-sm overflow-hidden">
 						<div class="bg-cover bg-center h-64 cursor-pointer">
-							<img data-modal-target="#modal-{{ image.id }}" id="{{ image.id }}" src="{{ image.picture ? asset('uploads/project/' ~ image.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ project.name }}" class="w-full h-64 object-cover object-center" onclick="openModal('modal-{{ image.id }}')">
+							<img
+								data-modal-target="#modal-{{ image.id }}"
+								id="{{ image.id }}" src="{{ asset('uploads/project/' ~ image.picture) }}" alt="{{ project.name }}"
+								class="w-full h-64 object-cover object-center transition duration-500 ease-in-out hover:scale-105"
+								onclick="openModal('modal-{{ image.id }}')"
+								/>
 						</div>
 					</div>
 				</div>
@@ -31,9 +36,13 @@
 				<div id="modal-{{ image.id }}" class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 z-50 hidden overflow-y-auto items-center justify-center" data-modal-id="{{ image.id }}">
 					<div class="w-10/12 md:w-1/2 lg:w-1/2 mx-auto rounded-sm shadow-sm z-50 overflow-y-auto relative">
 						<button onclick="closeModal('modal-{{ image.id }}')">
-							<img src="{{ asset('build/images/cross-icon.svg') }}" alt="close" class="w-8 h-8 absolute top-0 right-0">
+							<img src="{{ asset('build/images/cross-icon.svg') }}" alt="close" class="w-8 h-8">
 						</button>
-						<img src="{{ image.picture ? asset('uploads/project/' ~ image.picture) : 'https://via.placeholder.com/500x500' }}" alt="{{ project.name }}" class="rounded-sm">
+						<img
+							src="{{ asset('uploads/project/' ~ image.picture) }}"
+							alt="{{ project.name }}"
+							class="rounded-sm shadow-sm object-cover object-center w-full" 
+							/>
 					</div>
 				</div>
 			{% endfor %}

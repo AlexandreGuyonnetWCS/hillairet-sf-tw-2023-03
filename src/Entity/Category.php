@@ -2,10 +2,10 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CategoryRepository;
-use Doctrine\Common\Collections\Collection;
-use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
 #[ORM\HasLifecycleCallbacks]
@@ -32,13 +32,24 @@ class Category
     #[ORM\Column(type: 'text', nullable: true)]
     private ?string $description = null;
 
-    #[ORM\OneToMany(
-        mappedBy: 'category',
-        targetEntity: CategoryImage::class,
-        orphanRemoval: true,
-        cascade: ['persist']
-    )]
-    private Collection $image;
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private ?string $image = null;
+
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Project::class)]
+    private Collection $projects;
+
+    public function __construct()
+    {
+        $this->projects = new ArrayCollection();
+    }
+
+    #[ORM\PostRemove]
+    public function postRemove(): void
+    {
+        if ($this->image) {
+            unlink('uploads/category/' . $this->image);
+        }
+    }
 
     #[ORM\PrePersist]
     #[ORM\PreUpdate]
@@ -48,10 +59,6 @@ class Category
         if (null !== $this->description) {
             $this->summary = substr($this->description, 0, 100);
         }
-    }
-    public function __construct()
-    {
-        $this->image = new ArrayCollection();
     }
 
     /**
@@ -158,39 +165,20 @@ class Category
     }
 
     /**
-     * @return Collection<int, CategoryImage>
+     * @return string|null
      */
-    public function getImage(): Collection
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
     /**
-     * @param CategoryImage $image
+     * @param string|null $image
      * @return Category
      */
-    public function addImage(CategoryImage $image): Category
+    public function setImage(?string $image): Category
     {
-        if (!$this->image->contains($image)) {
-            $this->image->add($image);
-            $image->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param CategoryImage $image
-     * @return Category
-     */
-    public function removeImage(CategoryImage $image): Category
-    {
-        if ($this->image->removeElement($image)) {
-            // set the owning side to null (unless already changed)
-            if ($image->getCategory() === $this) {
-                $image->setCategory(null);
-            }
-        }
+        $this->image = $image;
 
         return $this;
     }
@@ -198,5 +186,35 @@ class Category
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, Project>
+     */
+    public function getProjects(): Collection
+    {
+        return $this->projects;
+    }
+
+    public function addProject(Project $project): self
+    {
+        if (!$this->projects->contains($project)) {
+            $this->projects->add($project);
+            $project->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProject(Project $project): self
+    {
+        if ($this->projects->removeElement($project)) {
+            // set the owning side to null (unless already changed)
+            if ($project->getCategory() === $this) {
+                $project->setCategory(null);
+            }
+        }
+
+        return $this;
     }
 }
