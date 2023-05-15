@@ -37,6 +37,9 @@ class Project
     )]
     private Collection $image;
 
+    #[ORM\ManyToOne(inversedBy: 'projects')]
+    private ?Category $category = null;
+
     public function __construct()
     {
         $this->image = new ArrayCollection();
@@ -167,5 +170,17 @@ class Project
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
     }
 }
