@@ -24,7 +24,11 @@
 									</div>
 								</div>
 							</div>
-							<img src="{{ team.picture ? asset('uploads/team/' ~ team.picture) : 'https://via.placeholder.com/300x400' }}" alt="{{ team.firstName }}" class="transition duration-300 ease-in-out"/>
+							<img
+								src="{{ team.picture ? asset('uploads/team/' ~ team.picture) : 'https://via.placeholder.com/300x400' }}"
+								alt="{{ team.firstName }}"
+								class="object-cover object-center h-[400px] w-[300px]"
+								/>
 						</div>
 					{% endfor %}
 				</div>

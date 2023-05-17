@@ -17,8 +17,12 @@ class ProjectImage
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $picture = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $credits = null;
+
     #[ORM\ManyToOne(inversedBy: 'image')]
     private ?Project $project = null;
+
 
     #[ORM\PostRemove]
     public function postRemove(): void
@@ -51,6 +55,25 @@ class ProjectImage
     public function setPicture(?string $picture): ProjectImage
     {
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCredits(): ?string
+    {
+        return $this->credits;
+    }
+
+    /**
+     * @param string|null $credits
+     * @return ProjectImage
+     */
+    public function setCredits(?string $credits): self
+    {
+        $this->credits = $credits;
 
         return $this;
     }

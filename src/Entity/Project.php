@@ -167,20 +167,24 @@ class Project
         return $this;
     }
 
-    public function __toString(): string
-    {
-        return $this->name;
-    }
-
     public function getCategory(): ?Category
     {
         return $this->category;
     }
 
+    /**
+     * @param Category|null $category
+     * @return Project
+     */
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
