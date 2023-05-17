@@ -47,6 +47,7 @@ class CategoryCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/category')
                 ->setUploadedFileNamePattern('[randomhash].[extension]')
                 ->setHelp('L\'image ne doit pas dépasser 2Mo'),
+            TextField::new('credits', 'Crédits photos'),
             SlugField::new('slug', 'Slug')
                 ->setTargetFieldName('name')
                 ->setRequired(true)

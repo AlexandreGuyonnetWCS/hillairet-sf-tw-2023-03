@@ -35,6 +35,9 @@ class Category
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $image = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $credits = null;
+
     #[ORM\OneToMany(mappedBy: 'category', targetEntity: Project::class)]
     private Collection $projects;
 
@@ -183,9 +186,23 @@ class Category
         return $this;
     }
 
-    public function __toString(): string
+    /**
+     * @return string|null
+     */
+    public function getCredits(): ?string
     {
-        return $this->name;
+        return $this->credits;
+    }
+
+    /**
+     * @param string|null $credits
+     * @return Category
+     */
+    public function setCredits(?string $credits): self
+    {
+        $this->credits = $credits;
+
+        return $this;
     }
 
     /**
@@ -216,5 +233,10 @@ class Category
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
